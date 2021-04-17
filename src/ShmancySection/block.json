@@ -4,7 +4,7 @@
 	"title": "Shamncy Section",
 	"category": "apple2000",
 	"icon": "block-default",
-	"description": "Example block written with ESNext standard and JSX support – build step required.",
+	"description": "The ShmancySection block for the Apple 2000 component.",
 	"supports": {
 		"html": false
 	},
