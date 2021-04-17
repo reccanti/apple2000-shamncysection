@@ -3,13 +3,12 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-.wp-block-create-block-apple2000-shamncysection {
+.wp-block-apple2000-shmancy-section {
   border: 1px solid black;
   padding: 1rem;
   padding-top: 2rem;
 }
-
-.wp-block-create-block-apple2000-shamncysection::before {
+.wp-block-apple2000-shmancy-section::before {
   content: "ShmancySection";
   color: white;
   background: black;

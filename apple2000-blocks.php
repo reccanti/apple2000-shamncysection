@@ -32,7 +32,7 @@ add_filter( 'block_categories', 'create_apple2000_category', 10, 2);
  *
  * @see https://developer.wordpress.org/block-editor/tutorials/block-tutorial/writing-your-first-block-type/
  */
-function create_block_apple_2000_shamncysection_block_init() {
-	register_block_type_from_metadata( __DIR__ );
+function create_apple_2000_blocks() {
+	register_block_type_from_metadata( __DIR__."/src/ShmancySection");
 }
-add_action( 'init', 'create_block_apple_2000_shamncysection_block_init' );
+add_action( 'init', 'create_apple_2000_blocks' );

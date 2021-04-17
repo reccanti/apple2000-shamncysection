@@ -1,0 +1,15 @@
+{
+	"apiVersion": 2,
+	"name": "apple2000/shmancy-section",
+	"title": "Shamncy Section",
+	"category": "apple2000",
+	"icon": "block-default",
+	"description": "Example block written with ESNext standard and JSX support – build step required.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "shmancy-section",
+	"editorScript": "file:../../build/index.js",
+	"editorStyle": "file:../../build/index.css",
+	"style": "file:../../build/style-index.css"
+}
