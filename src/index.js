@@ -6,21 +6,16 @@
 import { registerBlockType } from "@wordpress/blocks";
 
 import ShmancySection from "./ShmancySection";
+import LinkGrid from "./LinkGrid";
+import LinkGridItem from "./LinkGridItem";
 
-const blocks = [ShmancySection];
+const blocks = [ShmancySection, LinkGrid, LinkGridItem];
 
 blocks.forEach((block) => {
 	console.log(block);
 	registerBlockType(block.name, {
 		apiVersion: 2,
-		/**
-		 * @see ./edit.js
-		 */
 		edit: block.edit,
-
-		/**
-		 * @see ./save.js
-		 */
 		save: block.save,
 	});
 });

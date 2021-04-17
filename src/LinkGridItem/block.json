@@ -1,14 +1,14 @@
 {
 	"apiVersion": 2,
-	"name": "apple2000/shmancy-section",
-	"title": "Shamncy Section",
+	"name": "apple2000/link-grid-item",
+	"title": "Link Grid Item",
 	"category": "apple2000",
-	"icon": "block-default",
-	"description": "The ShmancySection block for the Apple 2000 Theme.",
+	"icon": "format-image",
+	"description": "The LinkGridItem block for the Apple 2000 Theme.",
 	"supports": {
 		"html": false
 	},
-	"textdomain": "shmancy-section",
+	"textdomain": "link-grid-item",
 	"editorScript": "file:../../build/index.js",
 	"editorStyle": "file:../../build/index.css",
 	"style": "file:../../build/style-index.css"
