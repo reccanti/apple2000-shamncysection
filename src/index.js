@@ -5,17 +5,22 @@
  */
 import { registerBlockType } from "@wordpress/blocks";
 
-import ShmancySection from "./ShmancySection";
-import LinkGrid from "./LinkGrid";
-import LinkGridItem from "./LinkGridItem";
+/**
+ * Here's where we import and setup all our blocks. Blocks are expected
+ * to export fields like name, Edit, Save, attributes, etc... similar
+ * to how Storybook does it!
+ */
+import * as ShmancySectionBlock from "./ShmancySection";
+import * as LinkGridBlock from "./LinkGrid";
+import * as LinkGridItemBlock from "./LinkGridItem";
 
-const blocks = [ShmancySection, LinkGrid, LinkGridItem];
+const blocks = [ShmancySectionBlock, LinkGridBlock, LinkGridItemBlock];
 
-blocks.forEach((block) => {
-	console.log(block);
-	registerBlockType(block.name, {
+blocks.forEach(({ name, Edit, Save, ...data }) => {
+	registerBlockType(name, {
 		apiVersion: 2,
-		edit: block.edit,
-		save: block.save,
+		edit: Edit,
+		save: Save,
+		...data,
 	});
 });

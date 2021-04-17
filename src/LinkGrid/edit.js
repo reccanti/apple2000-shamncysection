@@ -30,7 +30,7 @@ import "./editor.scss";
  * @return {WPElement} Element to render.
  */
 const ALLOWED_BLOCKS = ["apple2000/link-grid-item"];
-export default function Edit() {
+export function Edit() {
 	return (
 		<div {...useBlockProps()}>
 			<InnerBlocks allowedBlocks={ALLOWED_BLOCKS} />

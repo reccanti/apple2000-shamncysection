@@ -29,7 +29,7 @@ import "./editor.scss";
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
+export function Edit() {
 	return (
 		<div {...useBlockProps()}>
 			<InnerBlocks />

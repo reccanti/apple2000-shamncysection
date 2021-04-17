@@ -10,11 +10,7 @@ import "./style.scss";
 /**
  * Internal dependencies
  */
-import Edit from "./edit";
-import save from "./save";
+export { Edit } from "./edit";
+export { Save } from "./save";
 
-export default {
-	edit: Edit,
-	save,
-	name: "apple2000/link-grid-item",
-};
+export const name = "apple2000/link-grid-item";

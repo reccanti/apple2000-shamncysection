@@ -22,7 +22,7 @@ import { useBlockProps, InnerBlocks } from "@wordpress/block-editor";
  *
  * @return {WPElement} Element to render.
  */
-export default function save() {
+export function Save() {
 	const props = useBlockProps.save();
 	const classNames = `${props.className} LinkGridItem`;
 	return (
