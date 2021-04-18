@@ -9,6 +9,10 @@
 	padding: 1rem;
 	padding-top: 2rem;
 
+	&.is-selected {
+		padding-top: 3rem;
+	}
+
 	&::before {
 		content: "LinkGridItem";
 		color: white;

@@ -1,38 +1,109 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
- */
 import { __ } from "@wordpress/i18n";
 
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
- */
-import { useBlockProps, InnerBlocks } from "@wordpress/block-editor";
+import {
+	useBlockProps,
+	URLInput,
+	MediaPlaceholder,
+} from "@wordpress/block-editor";
 
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
+import { TextControl, ToggleControl } from "@wordpress/components";
+
+import { useState, useEffect } from "@wordpress/element";
+
 import "./editor.scss";
 
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
- *
- * @return {WPElement} Element to render.
- */
-export function Edit() {
+// Helper Functions
+
+const getMediaSrc = (media) => {
+	return media.url;
+};
+
+const getMediaSrcset = (media) => {
+	const { sizes } = media;
+	const srcs = [];
+	Object.values(sizes).forEach((size) => {
+		const src = `${size.url} ${size.width}w`;
+		srcs.push(src);
+	});
+	return srcs.join(",");
+};
+
+// It's the Component!!!
+
+export function Edit({ attributes, setAttributes, isSelected }) {
+	// Hooks Baby!!!
+	const [isRecent, setIsRecent] = useState(attributes.isRecent);
+	useEffect(() => {
+		setAttributes({
+			...attributes,
+			isRecent,
+		});
+	}, [isRecent]);
+
+	// Helper functions
+	const onSelectImage = (value) => {
+		setAttributes({
+			...attributes,
+			previewImageSrc: getMediaSrc(value),
+			previewImageSrcset: getMediaSrcset(value),
+		});
+	};
+	const onURLChange = (value) => {
+		setAttributes({
+			...attributes,
+			url: value,
+		});
+	};
+	const onTextChange = (value) => {
+		setAttributes({
+			...attributes,
+			previewText: value,
+		});
+	};
+	const toggleIsRecent = () => {
+		setIsRecent(!isRecent);
+	};
+
+	if (isSelected) {
+		return (
+			<div {...useBlockProps()}>
+				<ToggleControl
+					label="Is Recent?"
+					checked={isRecent}
+					onChange={toggleIsRecent}
+				/>
+				<MediaPlaceholder
+					onSelect={onSelectImage}
+					allowedTypes={["image"]}
+					multiple={false}
+					labels={{ title: "Preview Image" }}
+				>
+					{attributes.previewImageSrc ? (
+						<img width="50px" height="50px" src={attributes.previewImageSrc} />
+					) : (
+						""
+					)}
+				</MediaPlaceholder>
+				<TextControl
+					label="Preview Text"
+					value={attributes.previewText}
+					onChange={onTextChange}
+				/>
+				<URLInput
+					label="URL"
+					value={attributes.url}
+					url={attributes.url}
+					onChange={onURLChange}
+				/>
+			</div>
+		);
+	}
 	return (
 		<div {...useBlockProps()}>
-			<InnerBlocks />
+			<img
+				src={attributes.previewImageSrc}
+				alt={`Preview image for ${attributes.previewText}`}
+			/>
 		</div>
 	);
 }

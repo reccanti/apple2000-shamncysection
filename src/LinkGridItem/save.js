@@ -22,12 +22,27 @@ import { useBlockProps, InnerBlocks } from "@wordpress/block-editor";
  *
  * @return {WPElement} Element to render.
  */
-export function Save() {
+export function Save({ attributes }) {
 	const props = useBlockProps.save();
-	const classNames = `${props.className} LinkGridItem`;
+	const classNames = `${props.className} LinkGridItem ${
+		attributes.isRecent ? "LinkGridItem--recent" : ""
+	}`;
+	console.log(attributes);
 	return (
 		<li {...props} className={classNames}>
-			<InnerBlocks.Content />
+			<a className="LinkGridItem-linkWrapper" href={attributes.url}>
+				<div className="LinkGridItem-description">
+					<div className="LinkGridItem-innerDescription">
+						{attributes.previewText}
+					</div>
+				</div>
+				<img
+					className="LinkGridItem-preview"
+					src={attributes.previewImageSrc}
+					srcset={attributes.previewImageSrcset}
+					role="presentation"
+				/>
+			</a>
 		</li>
 	);
 }

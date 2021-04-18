@@ -9,6 +9,15 @@
 	padding: 1rem;
 	padding-top: 2rem;
 
+	.block-editor-block-list__layout {
+		display: grid;
+		grid-template-columns: 1fr;
+
+		@media (min-width: 500px) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
 	&::before {
 		content: "LinkGrid";
 		color: white;
