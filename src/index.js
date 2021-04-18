@@ -13,6 +13,11 @@ import { registerBlockType } from "@wordpress/blocks";
 import * as ShmancySectionBlock from "./ShmancySection";
 import * as LinkGridBlock from "./LinkGrid";
 import * as LinkGridItemBlock from "./LinkGridItem";
+/**
+ * @TODO I don't really like how this is setup. Let's refactor this one
+ * once we update the npm package it's based on
+ * ~reccanti 4/17/2021
+ */
 import * as SplashBlock from "./Splash";
 
 const blocks = [

@@ -1241,13 +1241,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./attributes */ "./src/Splash/attributes.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "attributes", function() { return _attributes__WEBPACK_IMPORTED_MODULE_3__["attributes"]; });
 
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * All files containing `style` keyword are bundled together. The code used
- * gets applied both to the front of your site and to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
 
 /**
  * Internal dependencies
@@ -1337,6 +1330,12 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
+
+/**
+ * @TODO I don't really like how this is setup. Let's refactor this one
+ * once we update the npm package it's based on
+ * ~reccanti 4/17/2021
+ */
 
 
 var blocks = [_ShmancySection__WEBPACK_IMPORTED_MODULE_3__, _LinkGrid__WEBPACK_IMPORTED_MODULE_4__, _LinkGridItem__WEBPACK_IMPORTED_MODULE_5__, _Splash__WEBPACK_IMPORTED_MODULE_6__];
