@@ -13,8 +13,14 @@ import { registerBlockType } from "@wordpress/blocks";
 import * as ShmancySectionBlock from "./ShmancySection";
 import * as LinkGridBlock from "./LinkGrid";
 import * as LinkGridItemBlock from "./LinkGridItem";
+import * as SplashBlock from "./Splash";
 
-const blocks = [ShmancySectionBlock, LinkGridBlock, LinkGridItemBlock];
+const blocks = [
+	ShmancySectionBlock,
+	LinkGridBlock,
+	LinkGridItemBlock,
+	SplashBlock,
+];
 
 blocks.forEach(({ name, Edit, Save, ...data }) => {
 	registerBlockType(name, {

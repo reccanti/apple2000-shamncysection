@@ -1,0 +1,24 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-apple2000-splash {
+	border: 1px solid black;
+	padding: 1rem;
+	padding-top: 3rem;
+
+	&::before {
+		content: "Splash";
+		color: white;
+		background: black;
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 0.5rem;
+		margin-bottom: 1rem;
+		font-size: 0.7rem;
+	}
+}

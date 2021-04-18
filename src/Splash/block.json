@@ -1,0 +1,15 @@
+{
+	"apiVersion": 2,
+	"name": "apple2000/splash",
+	"title": "Splash",
+	"category": "apple2000",
+	"icon": "editor-expand",
+	"description": "The Splash section block for the Apple 2000 Theme.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "splash",
+	"editorScript": "file:../../build/index.js",
+	"editorStyle": "file:../../build/index.css",
+	"style": "file:../../build/style-index.css"
+}
