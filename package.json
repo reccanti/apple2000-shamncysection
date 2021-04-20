@@ -17,7 +17,6 @@
 		"@wordpress/block-editor": "^5.3.2",
 		"@wordpress/blocks": "^8.0.2",
 		"@wordpress/components": "^13.0.2",
-		"@wordpress/compose": "^3.25.2",
 		"@wordpress/element": "^2.20.2",
 		"@wordpress/i18n": "^3.19.2"
 	},
